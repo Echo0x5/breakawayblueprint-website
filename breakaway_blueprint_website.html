@@ -388,16 +388,6 @@
         .fade-in {
             animation: fadeInUp 0.6s ease-out;
         }
-        
-        /* Success message */
-        .success-message {
-            background: #27ae60;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 1rem;
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -527,13 +517,16 @@
             <h2>Join The Breakaway Community</h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem;">Get the monthly sovereignty report + access to practical strategies for building family freedom</p>
             
-            <form class="newsletter-form" id="newsletterForm">
-                <input type="email" placeholder="Enter your email address" required id="emailInput">
-                <button type="submit">Get The Blueprint</button>
-            </form>
-            
-            <div class="success-message" id="successMessage">
-                Welcome to The Breakaway Blueprint! Check your email for your first sovereignty report.
+            <div id="mc_embed_signup">
+                <form action="https://gmail.us7.list-manage.com/subscribe/post?u=dd3910d612439d0722b5a9cd7&amp;id=dd3c0ecc9d&amp;f_id=00238de0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter-form validate" target="_blank">
+                    <input type="email" name="EMAIL" class="required email" placeholder="Enter your email address" required="" value="" style="flex: 1; min-width: 250px; padding: 15px; border: none; border-radius: 5px; font-size: 1rem;">
+                    
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_dd3910d612439d0722b5a9cd7_dd3c0ecc9d" tabindex="-1" value="">
+                    </div>
+                    
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" style="background: #e74c3c; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: background 0.3s;">Get The Blueprint</button>
+                </form>
             </div>
             
             <div class="value-props">
@@ -565,31 +558,6 @@
     </footer>
 
     <script>
-        // Newsletter form handling
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('emailInput').value;
-            const successMessage = document.getElementById('successMessage');
-            
-            // Simple email validation
-            if (email && email.includes('@')) {
-                // In a real implementation, you'd send this to your email service
-                console.log('Email submitted:', email);
-                
-                // Show success message
-                successMessage.style.display = 'block';
-                
-                // Clear form
-                document.getElementById('emailInput').value = '';
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 5000);
-            }
-        });
-        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -622,6 +590,22 @@
         document.querySelectorAll('.catch22-item, .pillar, .blog-post').forEach(el => {
             observer.observe(el);
         });
+    </script>
+    
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+    (function($) {
+        window.fnames = new Array(); 
+        window.ftypes = new Array();
+        fnames[0]='EMAIL';ftypes[0]='email';
+        fnames[1]='FNAME';ftypes[1]='text';
+        fnames[2]='LNAME';ftypes[2]='text';
+        fnames[3]='ADDRESS';ftypes[3]='address';
+        fnames[4]='PHONE';ftypes[4]='phone';
+        fnames[5]='BIRTHDAY';ftypes[5]='birthday';
+        fnames[6]='COMPANY';ftypes[6]='text';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
     </script>
 </body>
 </html>
